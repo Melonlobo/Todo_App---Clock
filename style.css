@@ -1,0 +1,316 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, #f5dd08, #000000);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+header {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+header,
+form {
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input {
+    border-end-start-radius: 2rem;
+    border-start-start-radius: 2rem;
+}
+
+form input,
+form button {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    background: white;
+    outline: none;
+}
+
+form button {
+    color: black;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-end-end-radius: 2rem;
+    border-start-end-radius: 2rem;
+}
+
+form button:hover {
+    color: white;
+    background: black;
+}
+
+.todo-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 45%;
+    list-style: none;
+}
+
+.todo-div {
+    background: white;
+    color: black;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+    height: 3.5rem;
+}
+
+.todo {
+    flex: 1;
+    margin: 0 .5rem;
+}
+
+.check-btn,
+.edit-btn,
+.delete-btn {
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    background: white;
+    height: 100%;
+}
+
+.check-btn {
+    color: green;
+    outline: none;
+}
+
+.edit-btn {
+    color: blue;
+    outline: none;
+}
+
+.delete-btn {
+    color: red;
+    border-end-end-radius: 2rem;
+    border-start-end-radius: 2rem;
+    outline: none;
+}
+
+.check-btn:hover {
+    color: white;
+    background: green;
+}
+
+.edit-btn:hover {
+    color: white;
+    background: blue;
+}
+
+.delete-btn:hover {
+    color: white;
+    background: red;
+}
+
+.fa-check,
+.fa-edit,
+.fa-times-circle {
+    pointer-events: none;
+}
+
+.checked {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.todo-filter {
+    margin: 1rem;
+    border: none;
+    padding: .5rem;
+    outline: none;
+    cursor: pointer;
+    color: #000000;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.month-day-year {
+    color: white;
+    font-size: xx-large;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.month,
+.date,
+.day,
+.year {
+    padding: 0 0.5rem;
+}
+
+.day::after,
+.date::after {
+    content: ',';
+}
+
+.clock {
+    height: 18rem;
+    width: 18rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    position: relative;
+}
+
+.number {
+    --rotation: 0deg;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    height: 100%;
+    transform: translate(50%)rotate(var(--rotation));
+}
+
+.number1 {
+    --rotation: 30deg;
+}
+
+.number2 {
+    --rotation: 60deg;
+}
+
+.number3 {
+    --rotation: 90deg;
+}
+
+.number4 {
+    --rotation: 120deg;
+}
+
+.number5 {
+    --rotation: 150deg;
+}
+
+.number6 {
+    --rotation: 180deg;
+}
+
+.number7 {
+    --rotation: 210deg;
+}
+
+.number8 {
+    --rotation: 240deg;
+}
+
+.number9 {
+    --rotation: 270deg;
+}
+
+.number10 {
+    --rotation: 300deg;
+}
+
+.number11 {
+    --rotation: 330deg;
+}
+
+.hand {
+    --rotation: 0deg;
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    border-radius: 50%;
+    background: black;
+    transform-origin: bottom;
+    transform: translateX(50%)rotate(calc(var(--rotation)*1deg));
+}
+
+.hour {
+    width: 1rem;
+    height: 30%;
+}
+
+.minute {
+    width: .7rem;
+    height: 45%;
+}
+
+.second {
+    width: .1rem;
+    height: 49%;
+    background-color: red;
+}
+
+.clock::after {
+    content: '';
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+@media all and (max-width:700px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .todo-input {
+        width: 40vw;
+    }
+    .todo-filter {
+        width: 30vw;
+    }
+    .todo-container {
+        width: 90vw;
+        margin: auto;
+    }
+    .clock {
+        height: 15rem;
+        width: 15rem;
+    }
+    .month-day-year {
+        font-size: x-large;
+    }
+    .number {
+        font-size: 1.2rem;
+    }
+}
